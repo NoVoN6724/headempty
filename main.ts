@@ -1,6 +1,11 @@
 namespace SpriteKind {
     export const object2 = SpriteKind.create()
 }
+function ehh () {
+    game.splash("You are stupid")
+    pause(700)
+    game.reset()
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     sprite.destroy(effects.fire, 500)
 })
@@ -583,8 +588,7 @@ if (A1 == 1) {
                 game.showLongText("he makes you his trusted knight. Yippee", DialogLayout.Top)
                 game.over(true, effects.confetti)
             } else {
-                game.splash("I'm dissappointed")
-                game.reset()
+                ehh()
             }
         } else if (AAA1 == 2) {
             mySprite4 = sprites.create(img`
@@ -610,12 +614,10 @@ if (A1 == 1) {
             pause(2000)
             game.reset()
         } else {
-            game.splash("still not an option dumbass")
-            game.reset()
+            ehh()
         }
     } else {
-        game.splash("not an option dumbdumb")
-        game.reset()
+        ehh()
     }
 } else if (A1 == 2) {
     while (A1 == 2) {
@@ -1086,17 +1088,13 @@ if (A1 == 1) {
             pause(2000)
             game.over(true)
         } else {
-            game.splash("NOT AN OPTION")
-            game.reset()
+            ehh()
         }
     } else {
-        game.splash("I SAID 1 OR 2")
-        pause(500)
-        game.reset()
+        ehh()
     }
 } else {
-    game.splash("that wasn't an option")
-    game.reset()
+    ehh()
 }
 forever(function () {
 	
