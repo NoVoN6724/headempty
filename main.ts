@@ -1,11 +1,6 @@
 namespace SpriteKind {
     export const object2 = SpriteKind.create()
 }
-function ehh () {
-    game.splash("You are stupid")
-    pause(700)
-    game.reset()
-}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     sprite.destroy(effects.fire, 500)
 })
@@ -20,6 +15,10 @@ let AAA1 = 0
 let mySprite3: Sprite = null
 let AA1 = 0
 let mySprite2: Sprite = null
+let A1 = 0
+while (A1 == 2) {
+    music.playMelody("A G F G F E D E ", 500)
+}
 color.setPalette(
 color.GrayScale
 )
@@ -165,7 +164,7 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 mySprite.setPosition(45, 99)
 game.showLongText("You are a mushroom dude in a forest. would like to find food (1) or set up camp (2)", DialogLayout.Top)
-let A1 = game.askForNumber("", 1)
+A1 = game.askForNumber("", 1)
 if (A1 == 1) {
     while (A1 == 1 || A1 == 2) {
         music.playMelody("E F G F F G A B ", 500)
@@ -588,7 +587,8 @@ if (A1 == 1) {
                 game.showLongText("he makes you his trusted knight. Yippee", DialogLayout.Top)
                 game.over(true, effects.confetti)
             } else {
-                ehh()
+                game.splash("I'm dissappointed")
+                game.reset()
             }
         } else if (AAA1 == 2) {
             mySprite4 = sprites.create(img`
@@ -614,15 +614,14 @@ if (A1 == 1) {
             pause(2000)
             game.reset()
         } else {
-            ehh()
+            game.splash("still not an option dumbass")
+            game.reset()
         }
     } else {
-        ehh()
+        game.splash("not an option dumbdumb")
+        game.reset()
     }
 } else if (A1 == 2) {
-    while (A1 == 2) {
-        music.playMelody("A G F G F E D E ", 500)
-    }
     scene.setBackgroundImage(img`
         1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
         1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
@@ -1088,13 +1087,17 @@ if (A1 == 1) {
             pause(2000)
             game.over(true)
         } else {
-            ehh()
+            game.splash("NOT AN OPTION")
+            game.reset()
         }
     } else {
-        ehh()
+        game.splash("I SAID 1 OR 2")
+        pause(500)
+        game.reset()
     }
 } else {
-    ehh()
+    game.splash("that wasn't an option")
+    game.reset()
 }
 forever(function () {
 	
