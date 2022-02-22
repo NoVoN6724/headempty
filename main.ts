@@ -15,6 +15,7 @@ let AAA1 = 0
 let mySprite3: Sprite = null
 let AA1 = 0
 let mySprite2: Sprite = null
+let dumb_requirement = 0
 color.setPalette(
 color.GrayScale
 )
@@ -1093,5 +1094,7 @@ if (A1 == 1) {
     game.reset()
 }
 forever(function () {
-	
+    while (dumb_requirement == 0) {
+        music.playMelody("A G F G F E D E ", 500)
+    }
 })
