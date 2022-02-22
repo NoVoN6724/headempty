@@ -15,10 +15,6 @@ let AAA1 = 0
 let mySprite3: Sprite = null
 let AA1 = 0
 let mySprite2: Sprite = null
-let A1 = 0
-while (A1 == 2) {
-    music.playMelody("A G F G F E D E ", 500)
-}
 color.setPalette(
 color.GrayScale
 )
@@ -164,11 +160,8 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 mySprite.setPosition(45, 99)
 game.showLongText("You are a mushroom dude in a forest. would like to find food (1) or set up camp (2)", DialogLayout.Top)
-A1 = game.askForNumber("", 1)
+let A1 = game.askForNumber("", 1)
 if (A1 == 1) {
-    while (A1 == 1 || A1 == 2) {
-        music.playMelody("E F G F F G A B ", 500)
-    }
     mySprite2 = sprites.create(img`
         ...........222222ee.............
         .........2233333bbeee...........
